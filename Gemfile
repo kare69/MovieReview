@@ -30,6 +30,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'paperclip'
+
+gem 'aws-sdk'
+
 group :development, :test do
 	gem 'sqlite3'
 end

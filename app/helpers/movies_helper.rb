@@ -1,3 +1,5 @@
+require 'paperclip'
+
 module MoviesHelper
  def format_total_gross(movie)
    if movie.flop?
@@ -8,10 +10,10 @@ module MoviesHelper
  end
  
  def image_for(movie)
-   if movie.image_file_name.blank?
-     image_tag('placeholder.png')
+   if movie.image
+     image_tag(movie.image.url)
    else
-     image_tag(movie.image_file_name)
+     image_tag('placeholder.png')
    end
  end
 
